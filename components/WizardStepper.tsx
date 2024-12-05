@@ -7,7 +7,7 @@ const WizardStepper = ({ currentStep }: WizardStepperProps) => {
     <div className="wizard-stepper">
       <div className="wizard-stepper__container">
         {[1, 2, 3].map((step, index) => (
-          <React.Fragment key={step}>
+          <React.Fragment key={index}>
             <div className="wizard-stepper__step">
               <div
                 className={cn("wizard-stepper__circle", {
