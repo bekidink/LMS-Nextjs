@@ -8,13 +8,13 @@ import { useCurrentCourse } from "@/hooks/useCurrentCourse";
 import { GuestFormData, guestSchema } from "@/lib/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useSearchParams } from "next/navigation";
-import React from "react";
+import React, { Suspense } from "react";
 import { Form } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
 import SignUpComponent from "@/components/SignUpComponent";
 import SignInComponent from "@/components/SignInComponent";
 
-const CheckoutDetailsPage = () => {
+const CheckoutDetails = () => {
   const { course: selectedCourse, isLoading, isError } = useCurrentCourse();
   const searchParams = useSearchParams();
   const showSignUp = searchParams.get("showSignUp") === "true";
@@ -81,5 +81,9 @@ const CheckoutDetailsPage = () => {
     </div>
   );
 };
-
+const CheckoutDetailsPage = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <CheckoutDetails />
+  </Suspense>
+);
 export default CheckoutDetailsPage;

@@ -6,8 +6,9 @@ const Footer = () => {
     <div className="footer">
       <p>&copy; 2023 Beki. All Rights Reserved</p>
       <div className="footer__links">
-        {["About", "Privacy Policy", "Licensing", "Contact"].map((item) => (
+        {["About", "Privacy Policy", "Licensing", "Contact"].map((item,i) => (
           <Link
+          key={i}
             href={`/${item.toLocaleLowerCase().replace(" ", "-")}`}
             className="footer__link"
           >

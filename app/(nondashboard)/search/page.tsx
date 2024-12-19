@@ -3,12 +3,12 @@
 import Loading from "@/components/Loading";
 import { useGetCoursesQuery } from "@/state/api";
 import { useRouter, useSearchParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import CourseCardSearch from "@/components/CourseSearchCard";
 import SelectedCourse from "@/components/CourseSelected";
 
-const Search = () => {
+const SearchContent = () => {
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
   const { data: courses, isLoading, isError } = useGetCoursesQuery({});
@@ -85,5 +85,9 @@ const Search = () => {
     </motion.div>
   );
 };
-
+const Search = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <SearchContent />
+  </Suspense>
+);
 export default Search;
