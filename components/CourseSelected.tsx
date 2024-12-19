@@ -30,7 +30,7 @@ const SelectedCourse = ({ course, handleEnrollNow }: SelectedCourseProps) => {
           </span>
           <Button
             onClick={() => handleEnrollNow(course.courseId)}
-            className="bg-primary-700 hover:bg-primary-600"
+            className="bg-primary-700 selected-course__price hover:bg-primary-600"
           >
             Enroll Now
           </Button>

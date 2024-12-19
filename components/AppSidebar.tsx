@@ -19,6 +19,7 @@ import {
   PanelLeft,
   Settings,
   User,
+  Globe
 } from "lucide-react";
 import Loading from "./Loading";
 import Image from "next/image";
@@ -37,12 +38,14 @@ const AppSidebar = () => {
       { icon: Briefcase, label: "Billing", href: "/user/billing" },
       { icon: User, label: "Profile", href: "/user/profile" },
       { icon: Settings, label: "Settings", href: "/user/settings" },
+      { icon: Globe, label: "Online", href: "/" },
     ],
     teacher: [
       { icon: BookOpen, label: "Courses", href: "/teacher/courses" },
       { icon: DollarSign, label: "Billing", href: "/teacher/billing" },
       { icon: User, label: "Profile", href: "/teacher/profile" },
       { icon: Settings, label: "Settings", href: "/teacher/settings" },
+      { icon: Globe, label: "Online", href: "/" },
     ],
   };
 
@@ -76,7 +79,7 @@ const AppSidebar = () => {
                     height={20}
                     className="app-sidebar__logo"
                   />
-                  <p className="app-sidebar__title">EDROH</p>
+                  <p className="app-sidebar__title">E-Learning</p>
                 </div>
                 <PanelLeft className="app-sidebar__collapse-icon" />
               </div>

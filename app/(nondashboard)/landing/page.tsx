@@ -75,11 +75,10 @@ const Page = () => {
         </p>
         <div className="landing__tags">
           {[
-            "web development",
-            "enterprise IT",
-            "react nextjs",
-            "javascript",
-            "backend development",
+            "Health Care",
+            "Web Development",
+            "Enterprise IT",
+           ,
           ].map((tag, i) => (
             <span key={i} className="landing__tag">
               {tag}
